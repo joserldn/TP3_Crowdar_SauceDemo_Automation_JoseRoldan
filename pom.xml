@@ -36,10 +36,10 @@
 		<crowdar.extent.user.name>User.name</crowdar.extent.user.name>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
-		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
+		<crowdar.cucumber.option>src/test/resources/web.features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://www.saucedemo.com/</web-app.url>
 
 	</properties>
 	<profiles>
@@ -48,24 +48,20 @@
 		<!--    Profiles related to Browser requirementes    -->
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-		<profile>
-			<id>chrome</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<crowdar.projectType>WEB_CHROME</crowdar.projectType>
-				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
-			</properties>
-		</profile>
+        <profile>
+            <id>chrome</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <crowdar.projectType>WEB_CHROME</crowdar.projectType>
+                <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
+            </properties>
+        </profile>
 
-		<profile>
-			<id>firefox</id>
-			<properties>
-				<crowdar.projectType>WEB_FIREFOX</crowdar.projectType>
-				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/firefoxCapabilities.json</crowdar.driver.capabilities.json_path>
-			</properties>
-		</profile>
+        <profile>
+            <id>firefox</id>
+        </profile>
 
 		<profile>
 			<id>chromeHeadless</id>
